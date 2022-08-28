@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Blog Site]]></title><description><![CDATA[I write about code]]></description><link>https://qubehash.com</link><image><url>https://qubehash.com/icon.png</url><title>My Blog Site</title><link>https://qubehash.com</link></image><generator>RSS for Node</generator><lastBuildDate>Sun, 28 Aug 2022 14:27:38 GMT</lastBuildDate><atom:link href="https://qubehash.com/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 29 Sep 2021 18:00:00 GMT</pubDate><copyright><![CDATA[2022 QubeHash]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[qubehash@gmail.com]]></managingEditor><webMaster><![CDATA[qubehash@gmail.com]]></webMaster><ttl>60</ttl><item><title><![CDATA[Karim Banjama]]></title><description><![CDATA[<h3 id="tableofcontent">Table of content</h3>
+<p>1 Introduction
+2 Prerequisite
+3 Why you should Dockerize your application</p>
+<h4 id="introduction">Introduction</h4>
+<p>I decided to write this article because I noticed, many tech companies are not using docker for local development, only (in some cases) with their CI/ CD. So today, I will show you how to create a Docker image of a Spring boot application and run it in a Docker container.
+So that you don't get lost, I'll start by reminding you what Docker and its containers are. Then you will also see how to create a Docker image of your application with a Dockerfile and with Docker compose (which is the version I recommend) and finally test that your application is well deployed and usable via the Docker container.</p>
+<h4 id="prerequisite">Prerequisite</h4>
+<ul>
+<li>Fundamentals of Java</li>
+<li>Beginner level on Docker</li>
+<li>Basic of command line</li>
+</ul>
+<h4 id="whyyoushoulddockerizeyourapplication">Why you should Dockerize your application?</h4>
+<p>When you work on an enterprise app, you realize it must respond quickly to changing conditions. That means both easy scaling to meet demand and easy updating to add new features as the business requires.
+Docker containers make it easy for you to put new versions of software, with new business features, into production quickly and to quickly roll back to a previous version if you need to. Also running application in containers can also bring you plenty of benefits like : <br></p>
+<p><em>Portability, Performance, Agility, Isolation, and Scalability</em>
+Now, let me give you some reminders about the Docker Jargon</p>
+<p>==Docker==</p>
+<p>According to their official <a href="#heading-ids">official documentation</a> , Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure, so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your apps.</p>
+<p>==Container==
+A container is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI. You can connect a container to one or more networks, attach storage to it, or even create a new image based on its current state.</p>
+<p><img src="/public/img/docgripcal.png" alt="The San Juan Mountains are beautiful!" title="docker grapg" /></p>
+<p>How Dockerfile works</p>
+<p>==Docker Compose==
+Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.</p>
+<pre><code class="json language-json">{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+</code></pre>
+<pre><code class="html language-html">&lt;dependency&gt;
+    &lt;groupId&gt;com.h2database&lt;/groupId&gt;
+    &lt;artifactId&gt;h2&lt;/artifactId&gt;
+    &lt;scope&gt;runtime&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>To test that your application works, once you will run it inside your container, add this REST Method, in your Application class. (It’s not the best way to operate, but this tutorial is focused on Docker, not Java)</p>
+<h4 id="dockerizeyourspringbootapplicationusingdockercompose">Dockerize your Spring boot application using Docker Compose</h4>
+<p>If you don’t want to pass the port option in the command line or if you want to run your container as a service, you can create a Docker compose file</p>
+<pre><code>version: '3.8'
+services:
+  spring-app:
+    build: .
+    container_name: 'demo-spring-app'
+    restart: always
+    ports:
+      - '8080:8080'
+</code></pre>
+<p>The really valuable idea in this principle is that it's extremely handy if you can clearly separate methods that change state from those that don't. This is because you can use queries in many situations with much more confidence, introducing them anywhere, changing their order. In another side, you have to be more careful with commands.</p>]]></description><link>https://qubehash.com/blog/django-crash-course</link><guid isPermaLink="true">https://qubehash.com/blog/django-crash-course</guid><category><![CDATA[Gregoire Cousin]]></category><dc:creator><![CDATA[Gregoire Cousin]]></dc:creator><pubDate>Fri, 10 Jul 2020 23:51:18 GMT</pubDate></item><item><title><![CDATA[Gregoire Cousin]]></title><description><![CDATA[<h3 id="tableofcontent">Table of content</h3>
+<p>1 Introduction
+2 Prerequisite
+3 Why you should Dockerize your application</p>
+<h4 id="introduction">Introduction</h4>
+<p>I decided to write this article because I noticed, many tech companies are not using docker for local development, only (in some cases) with their CI/ CD. So today, I will show you how to create a Docker image of a Spring boot application and run it in a Docker container.
+So that you don't get lost, I'll start by reminding you what Docker and its containers are. Then you will also see how to create a Docker image of your application with a Dockerfile and with Docker compose (which is the version I recommend) and finally test that your application is well deployed and usable via the Docker container.</p>
+<h4 id="prerequisite">Prerequisite</h4>
+<ul>
+<li>Fundamentals of Java</li>
+<li>Beginner level on Docker</li>
+<li>Basic of command line</li>
+</ul>
+<h4 id="whyyoushoulddockerizeyourapplication">Why you should Dockerize your application?</h4>
+<p>When you work on an enterprise app, you realize it must respond quickly to changing conditions. That means both easy scaling to meet demand and easy updating to add new features as the business requires.
+Docker containers make it easy for you to put new versions of software, with new business features, into production quickly and to quickly roll back to a previous version if you need to. Also running application in containers can also bring you plenty of benefits like : <br></p>
+<p><em>Portability, Performance, Agility, Isolation, and Scalability</em>
+Now, let me give you some reminders about the Docker Jargon</p>
+<p>==Docker==</p>
+<p>According to their official <a href="#heading-ids">official documentation</a> , Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure, so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your apps.</p>
+<p>==Container==
+A container is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI. You can connect a container to one or more networks, attach storage to it, or even create a new image based on its current state.</p>
+<p><img src="/public/img/docgripcal.png" alt="The San Juan Mountains are beautiful!" title="docker grapg" /></p>
+<p>How Dockerfile works</p>
+<p>==Docker Compose==
+Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.</p>
+<pre><code class="json language-json">{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+</code></pre>
+<pre><code class="html language-html">&lt;dependency&gt;
+    &lt;groupId&gt;com.h2database&lt;/groupId&gt;
+    &lt;artifactId&gt;h2&lt;/artifactId&gt;
+    &lt;scope&gt;runtime&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>To test that your application works, once you will run it inside your container, add this REST Method, in your Application class. (It’s not the best way to operate, but this tutorial is focused on Docker, not Java)</p>
+<h4 id="dockerizeyourspringbootapplicationusingdockercompose">Dockerize your Spring boot application using Docker Compose</h4>
+<p>If you don’t want to pass the port option in the command line or if you want to run your container as a service, you can create a Docker compose file</p>
+<pre><code>version: '3.8'
+services:
+  spring-app:
+    build: .
+    container_name: 'demo-spring-app'
+    restart: always
+    ports:
+      - '8080:8080'
+</code></pre>
+<p>The really valuable idea in this principle is that it's extremely handy if you can clearly separate methods that change state from those that don't. This is because you can use queries in many situations with much more confidence, introducing them anywhere, changing their order. In another side, you have to be more careful with commands.</p>]]></description><link>https://qubehash.com/blog/gregcousin</link><guid isPermaLink="true">https://qubehash.com/blog/gregcousin</guid><category><![CDATA[Gregoire Cousin]]></category><dc:creator><![CDATA[Gregoire Cousin]]></dc:creator><pubDate>Fri, 10 Jul 2020 23:51:18 GMT</pubDate></item><item><title><![CDATA[Ricky ponting]]></title><description><![CDATA[<h3 id="tableofcontent">Table of content</h3>
+<p>1 Introduction
+2 Prerequisite
+3 Why you should Dockerize your application</p>
+<h4 id="introduction">Introduction</h4>
+<p>I decided to write this article because I noticed, many tech companies are not using docker for local development, only (in some cases) with their CI/ CD. So today, I will show you how to create a Docker image of a Spring boot application and run it in a Docker container.
+So that you don't get lost, I'll start by reminding you what Docker and its containers are. Then you will also see how to create a Docker image of your application with a Dockerfile and with Docker compose (which is the version I recommend) and finally test that your application is well deployed and usable via the Docker container.</p>
+<h4 id="prerequisite">Prerequisite</h4>
+<ul>
+<li>Fundamentals of Java</li>
+<li>Beginner level on Docker</li>
+<li>Basic of command line</li>
+</ul>
+<h4 id="whyyoushoulddockerizeyourapplication">Why you should Dockerize your application?</h4>
+<p>When you work on an enterprise app, you realize it must respond quickly to changing conditions. That means both easy scaling to meet demand and easy updating to add new features as the business requires.
+Docker containers make it easy for you to put new versions of software, with new business features, into production quickly and to quickly roll back to a previous version if you need to. Also running application in containers can also bring you plenty of benefits like : <br></p>
+<p><em>Portability, Performance, Agility, Isolation, and Scalability</em>
+Now, let me give you some reminders about the Docker Jargon</p>
+<p>==Docker==</p>
+<p>According to their official <a href="#heading-ids">official documentation</a> , Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure, so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your apps.</p>
+<p>==Container==
+A container is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI. You can connect a container to one or more networks, attach storage to it, or even create a new image based on its current state.</p>
+<p><img src="/public/img/docgripcal.png" alt="The San Juan Mountains are beautiful!" title="docker grapg" /></p>
+<p>How Dockerfile works</p>
+<p>==Docker Compose==
+Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.</p>
+<pre><code class="json language-json">{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+</code></pre>
+<pre><code class="html language-html">&lt;dependency&gt;
+    &lt;groupId&gt;com.h2database&lt;/groupId&gt;
+    &lt;artifactId&gt;h2&lt;/artifactId&gt;
+    &lt;scope&gt;runtime&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>To test that your application works, once you will run it inside your container, add this REST Method, in your Application class. (It’s not the best way to operate, but this tutorial is focused on Docker, not Java)</p>
+<h4 id="dockerizeyourspringbootapplicationusingdockercompose">Dockerize your Spring boot application using Docker Compose</h4>
+<p>If you don’t want to pass the port option in the command line or if you want to run your container as a service, you can create a Docker compose file</p>
+<pre><code>version: '3.8'
+services:
+  spring-app:
+    build: .
+    container_name: 'demo-spring-app'
+    restart: always
+    ports:
+      - '8080:8080'
+</code></pre>
+<p>The really valuable idea in this principle is that it's extremely handy if you can clearly separate methods that change state from those that don't. This is because you can use queries in many situations with much more confidence, introducing them anywhere, changing their order. In another side, you have to be more careful with commands.</p>]]></description><link>https://qubehash.com/blog/javascript-performance-tips</link><guid isPermaLink="true">https://qubehash.com/blog/javascript-performance-tips</guid><category><![CDATA[Gregoire Cousin]]></category><dc:creator><![CDATA[Gregoire Cousin]]></dc:creator><pubDate>Fri, 10 Jul 2020 23:51:18 GMT</pubDate></item><item><title><![CDATA[Tomas Molar]]></title><description><![CDATA[<p>Lorem markdownum erat meritum instat quis! Parari vera harundinibus molibus nam
+illuc, <strong>egi</strong> tellus <a href="http://necloqui.com/fuit.html">facta ruinas</a>, iterumque!
+Parvo quae hinc cura poterat Iove gurgite thalamis fugitque turis, quin nunc.</p>
+<pre><code>var pdf_linux_radcab = gibibyteAspUri + firewireIvr -
+        jre_software_character;
+var megabit_layout = 38 + executableExpansionHdd(storage_import_runtime,
+        tweenJpeg) - contextual;
+url_bing.upnp_modifier_cold(linkedin, inputTrackballRefresh.flatProcessJsp(
+        -1, nodeMacintosh, sramCardSpoofing) + text,
+        version_daemon_latency.localhost_compact_boot.dosSpool(
+        memory_controller_blu(jpegServer, maximizeAsciiType), status));
+</code></pre>
+<p>Iungunt cuspis rarissima tendentem domus natis tamen ultima domino invidiosa
+cautum nec falcatus viridi omnes, soror. Ire tacita. Dissidet eat voce et
+Pactolides illa sed <a href="http://passim.com/">hunc</a> longi illa arborea, dum securi;
+vidit.</p>
+<h2 id="danttestaanimaliasequendipaternimanusparte">Dant testa animalia sequendi paterni manus parte</h2>
+<p><em>Venus</em> dissimulare perii <em>iaculatur dedere multumque</em> sitim, cur tela
+temeraria, per? Meum eque deae tu vidisse Frigus triennia, equo
+<a href="http://in.net/ignarusfuit.html">trahit</a>, enim verti commota prima cornibus
+pectora!</p>
+<pre><code>tiffWord(snippetAnimatedCd);
+wrap_exbibyte = cropStation;
+if (page(mailDvCybersquatter, error, ip)) {
+    xsltMacintosh += ip;
+} else {
+    social += traceroute_redundancy_voip;
+    box_isp.lion = wepSuffix;
+}
+</code></pre>
+<p>Tam Pomona <em>fixis cera vidisse</em> Sperchios ista <em>concordes</em> parte comes animalia
+ira miserae magna iaculatur sententia abest. <a href="http://puer-nec.io/squalidus">Est</a>
+illam esse hasta? Iamque Argolico spumam quondam, Sirenes dolor longus arbor
+perque.</p>
+<h2 id="iamqueillanumquamdictis">Iamque illa numquam dictis</h2>
+<p>Verberat arma parte mariti, tempora mugit glomerataque illa epulis: Troiam. De
+illo ut Lyncus an mihi, est alas ventisque et <strong>opem</strong>, iure anxia, pes qua
+quodque nati. Morti est tertia tutissimus prope, <strong>herbas</strong> hoc cecidere
+videres. Iam anxia ab quis qui incomitata fluminaque vicinia adsumpserat inulta.
+Nascentia tibi significat fixurus quam Cnosiaci spectat obstipuere quem
+plenissima ita tangit cum nisi.</p>
+<pre><code>class.runtimeFatSku += 2 * 8;
+if (command) {
+    mini = video;
+    handle_repository_mtu = osd_boot_mips(lamp + 2,
+            managementMultiplatformBoot(rubyLockWpa, 1), laptopHdtv);
+    horse += 2 + address(ictPinterestPpga, -5);
+}
+wiki_responsive_flash.ddr_disk -= c_cd +
+        andCopy.intellectual_so_iteration.cross(moduleReadme, programming +
+        broadband);
+</code></pre>
+<p>Mirantia deique sacerdos, opus, at <a href="http://www.potentia.net/lapis">generis eandem
+planamque</a>. Caecos pedibus velo pennas esse nam
+nostri <strong>rapit</strong>, diu Caras, amantem, Areos Aeacides via. Ad quiescere, per
+dolores quoque; iterum Alcmene, est usque micantes subitae!</p>]]></description><link>https://qubehash.com/blog/new-in-php-8</link><guid isPermaLink="true">https://qubehash.com/blog/new-in-php-8</guid><category><![CDATA[Gregoire Cousin]]></category><dc:creator><![CDATA[Tomas Molar]]></dc:creator><pubDate>Fri, 10 Jul 2020 23:51:18 GMT</pubDate></item><item><title><![CDATA[Henry Robart]]></title><description><![CDATA[<h3 id="tableofcontent">Table of content</h3>
+<p>1 Introduction
+2 Prerequisite
+3 Why you should Dockerize your application</p>
+<h4 id="introduction">Introduction</h4>
+<p>I decided to write this article because I noticed, many tech companies are not using docker for local development, only (in some cases) with their CI/ CD. So today, I will show you how to create a Docker image of a Spring boot application and run it in a Docker container.
+So that you don't get lost, I'll start by reminding you what Docker and its containers are. Then you will also see how to create a Docker image of your application with a Dockerfile and with Docker compose (which is the version I recommend) and finally test that your application is well deployed and usable via the Docker container.</p>
+<h4 id="prerequisite">Prerequisite</h4>
+<p>Fundamentals of Java
+Beginner level on Docker
+Basic of command line</p>
+<h4 id="whyyoushoulddockerizeyourapplication">Why you should Dockerize your application?</h4>
+<p>When you work on an enterprise app, you realize it must respond quickly to changing conditions. That means both easy scaling to meet demand and easy updating to add new features as the business requires.
+Docker containers make it easy for you to put new versions of software, with new business features, into production quickly and to quickly roll back to a previous version if you need to. Also running application in containers can also bring you plenty of benefits like : <br></p>
+<p><em>Portability, Performance, Agility, Isolation, and Scalability</em>
+Now, let me give you some reminders about the Docker Jargon</p>
+<p>==Docker==</p>
+<p>According to their official <a href="#heading-ids">official documentation</a> , Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure, so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your apps.</p>
+<p>==Container==
+A container is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI. You can connect a container to one or more networks, attach storage to it, or even create a new image based on its current state.</p>
+<p><img src="/public/img/docgripcal.png" alt="The San Juan Mountains are beautiful!" title="docker grapg" /></p>
+<p>How Dockerfile works</p>
+<p>==Docker Compose==
+Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.</p>
+<pre><code class="json language-json">{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+</code></pre>
+<pre><code class="html language-html">&lt;dependency&gt;
+    &lt;groupId&gt;com.h2database&lt;/groupId&gt;
+    &lt;artifactId&gt;h2&lt;/artifactId&gt;
+    &lt;scope&gt;runtime&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>To test that your application works, once you will run it inside your container, add this REST Method, in your Application class. (It’s not the best way to operate, but this tutorial is focused on Docker, not Java)</p>
+<h4 id="dockerizeyourspringbootapplicationusingdockercompose">Dockerize your Spring boot application using Docker Compose</h4>
+<p>If you don’t want to pass the port option in the command line or if you want to run your container as a service, you can create a Docker compose file</p>
+<pre><code>version: '3.8'
+services:
+  spring-app:
+    build: .
+    container_name: 'demo-spring-app'
+    restart: always
+    ports:
+      - '8080:8080'
+</code></pre>
+<p>The really valuable idea in this principle is that it's extremely handy if you can clearly separate methods that change state from those that don't. This is because you can use queries in many situations with much more confidence, introducing them anywhere, changing their order. In another side, you have to be more careful with commands.</p>]]></description><link>https://qubehash.com/blog/python-book-review</link><guid isPermaLink="true">https://qubehash.com/blog/python-book-review</guid><category><![CDATA[Gregoire Cousin]]></category><dc:creator><![CDATA[Gregoire Cousin]]></dc:creator><pubDate>Fri, 10 Jul 2020 23:51:18 GMT</pubDate></item><item><title><![CDATA[Mark Robart]]></title><description><![CDATA[<h3 id="tableofcontent">Table of content</h3>
+<ol>
+<li>Introduction</li>
+<li>Prerequisite</li>
+<li>Why you should Dockerize your application</li>
+</ol>
+<h4 id="introduction">Introduction</h4>
+<p>I decided to write this article because I noticed, many tech companies are not using docker for local development, only (in some cases) with their CI/ CD. So today, I will show you how to create a Docker image of a Spring boot application and run it in a Docker container.
+So that you don't get lost, I'll start by reminding you what Docker and its containers are. Then you will also see how to create a Docker image of your application with a Dockerfile and with Docker compose (which is the version I recommend) and finally test that your application is well deployed and usable via the Docker container.</p>
+<h4 id="prerequisite">Prerequisite</h4>
+<p>Fundamentals of Java
+Beginner level on Docker
+Basic of command line</p>
+<h4 id="whyyoushoulddockerizeyourapplication">Why you should Dockerize your application?</h4>
+<p>When you work on an enterprise app, you realize it must respond quickly to changing conditions. That means both easy scaling to meet demand and easy updating to add new features as the business requires.
+Docker containers make it easy for you to put new versions of software, with new business features, into production quickly and to quickly roll back to a previous version if you need to. Also running application in containers can also bring you plenty of benefits like : <br></p>
+<p><em>Portability, Performance, Agility, Isolation, and Scalability</em>
+Now, let me give you some reminders about the Docker Jargon</p>
+<p>==Docker==</p>
+<p>According to their official <a href="#heading-ids">official documentation</a> , Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure, so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your apps.</p>
+<p>==Container==
+A container is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI. You can connect a container to one or more networks, attach storage to it, or even create a new image based on its current state.</p>
+<p><img src="public/img/docgripcal.png" alt="The San Juan Mountains are beautiful!" title="docker grapg" /></p>
+<p>How Dockerfile works</p>
+<p>==Docker Compose==
+Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.</p>
+<pre><code class="json language-json">{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+</code></pre>
+<pre><code class="html language-html">&lt;dependency&gt;
+    &lt;groupId&gt;com.h2database&lt;/groupId&gt;
+    &lt;artifactId&gt;h2&lt;/artifactId&gt;
+    &lt;scope&gt;runtime&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>To test that your application works, once you will run it inside your container, add this REST Method, in your Application class. (It’s not the best way to operate, but this tutorial is focused on Docker, not Java)</p>
+<h4 id="dockerizeyourspringbootapplicationusingdockercompose">Dockerize your Spring boot application using Docker Compose</h4>
+<p>If you don’t want to pass the port option in the command line or if you want to run your container as a service, you can create a Docker compose file</p>
+<pre><code>version: '3.8'
+services:
+  spring-app:
+    build: .
+    container_name: 'demo-spring-app'
+    restart: always
+    ports:
+      - '8080:8080'
+</code></pre>
+<p>The really valuable idea in this principle is that it's extremely handy if you can clearly separate methods that change state from those that don't. This is because you can use queries in many situations with much more confidence, introducing them anywhere, changing their order. In another side, you have to be more careful with commands.</p>]]></description><link>https://qubehash.com/blog/writing-great-unit-tests</link><guid isPermaLink="true">https://qubehash.com/blog/writing-great-unit-tests</guid><category><![CDATA[Gregoire Cousin]]></category><dc:creator><![CDATA[Gregoire Cousin]]></dc:creator><pubDate>Fri, 10 Jul 2020 23:51:18 GMT</pubDate></item></channel></rss>

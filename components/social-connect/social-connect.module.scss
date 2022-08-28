@@ -1,0 +1,115 @@
+.connectLink{
+    p{
+
+        margin-bottom: 3rem;
+    }
+
+}
+.sociolinks{
+    display: flex;
+}
+.listlink{
+    width: 100px;
+    height: 100px;
+    border:1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1da1f2;
+    position: relative;
+    color: #fff;
+    span{
+        font-size: 2.25rem;
+        font-weight: normal;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+    p{
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 1.75rem;
+    }
+}
+.listlinkdin{
+    width: 100px;
+    height: 100px;
+    border:1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #d82b7d;
+    position: relative;
+    color: #fff;
+    margin: 0 10px;
+    span{
+        font-size: 40px;
+        font-weight: normal;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+    p{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 28px;
+    }
+}
+
+.listlinkgit{
+    width: 100px;
+    height: 100px;
+    border:1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1a1f25;
+    position: relative;
+    color: #fff;
+    span{
+        font-size: 40px;
+        font-weight: normal;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+    p{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 1.75rem;
+    }
+}
+
+@media(max-width: 768px){
+    .sociolinks{
+        display: none;
+    }
+
+}
+
+@media(max-width: 768px){
+    .connectLink{
+        p{
+            margin-bottom: 0;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+    }
+
+}

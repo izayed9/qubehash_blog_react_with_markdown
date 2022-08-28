@@ -1,0 +1,78 @@
+.subscribeform{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3.1rem;
+    background-color: #F7F7F7;
+    padding: 1.8rem;
+    .iconimg{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 1px solid white;
+        background-color: #fff;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        span{
+            font-size: 2.5rem;
+            position: absolute;
+            color: red;
+            font-size: 1.5rem;
+        }
+    }
+    .content{
+        text-align: center;
+        h3{
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 1.5rem;
+            margin-top: 1.52rem;
+        }
+        p{
+            font-size: 15px;
+            font-weight: normal;
+            margin-bottom: 1.5rem;
+        }
+    }
+    input{
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 0 0.6rem;
+        margin-bottom: 1.5rem;
+        font-size: 15px;
+        font-weight: normal;
+        outline: none;
+        &:focus{
+            outline: none !important;
+            border-color: #EF4E4F;
+            border: 1px solid #EF4E4F;
+            background-color: transparent;
+        }
+    }
+    button{
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 0 0.6rem;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        outline: none;
+        background-color: #EF4E4F;
+        color: white;
+        &:focus{
+            outline: none !important;
+            border-color: #EF4E4F;
+            border: 1px solid #EF4E4F;
+            background-color: transparent;
+        }
+    }
+}

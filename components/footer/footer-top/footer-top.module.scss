@@ -1,0 +1,78 @@
+.topform{
+    margin-top: 10px;
+    color: #fff;
+    div{
+     display: flex;
+     align-items: center;
+     h2{
+         font-size: 2rem;
+     }
+     img{
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+     }
+    }
+    p{
+        margin: 20px 0;
+    }
+    form{
+        input{
+            width: 60%;
+            height: 38px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 0 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.newsCard{
+    display: flex;
+    margin: 1rem 0;
+    color: #fff;
+
+    img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+    h2{
+        margin-left: 1.5rem;
+        font-weight: normal;
+        color: #fff;
+    }
+}
+
+.tags{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:(0.5rem);
+    padding-right: 1rem;
+    margin-top: 1rem;
+
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // align-items: flex-start;
+}
+
+.tagsBtn{
+    a{
+        border: 1px solid;
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #EF4E4F;
+        color: #fff;
+    }
+
+}
+
+.tagsBtn:hover{
+    a{
+        color: black;
+    }
+}
+
+

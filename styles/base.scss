@@ -1,0 +1,143 @@
+$primary-color: #EF4E4F;
+$secondary-color: #7D7E9E;
+$blak: #000;
+$white: #fff;
+
+
+html,
+body {
+
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:hover{
+      color: $primary-color;
+    }
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+
+    }
+    .container {
+      max-width: 1110px;
+      margin: auto;
+      overflow: auto;
+      padding: 0 0.6rem;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      color: $blak;
+      border: 1px solid $blak;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1rem;
+      font-family: inherit;
+      background-color: $white;
+    }
+    .btn-outline:hover {
+      background-color: $primary-color;
+      color: $white;
+      border: 1px solid $primary-color;
+    }
+    .btn {
+      display: inline-block;
+      color: $white;
+      background-color: $primary-color;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1rem;
+      font-family: inherit;
+      border-color: $primary-color;
+    }
+
+
+  input:focus{
+      outline: none !important;
+      border-color: #cc4176;
+      border: 1px solid #cc4176;
+      background-color: transparent;
+  }
+
+  .popular-blog{
+    display: flex;
+    margin-bottom: 2rem;
+    .post-cards{
+      width:70%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap:1.25rem;
+      margin-right: 1.25rem;
+
+    }
+    .asid-post{
+      width: 30%;
+      margin-left: 2rem;
+    }
+  }
+
+
+
+}
+
+@media (max-width: 768px) {
+  .popular-blog{
+    display: flex;
+    flex-direction: column  ;
+    .post-cards{
+      width:100%;
+
+    }
+    .asid-post{
+      width: 100% !important;
+      margin-left: 0px !important;
+
+    }
+
+  }
+}
+
+//footer
+.footerTop{
+  display: flex;
+  padding: 2.5rem 0 !important;
+  color: #fff;
+
+}
+.footerbg{
+  // background-color: #212529;
+  //  background-color: #011C39;
+  //  background-color: #212529;
+    background-color: #011839f7
+}
+.blogpost-body{
+  line-height: 2;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+
+@media (max-width: 768px) {
+  .footerTop{
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+  .footerbg{
+    padding: 1.25rem;
+  }
+
+}
+
+
+
+
